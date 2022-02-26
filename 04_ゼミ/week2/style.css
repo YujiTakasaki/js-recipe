@@ -1,0 +1,17 @@
+.parent {
+  display: flex;
+}
+
+.children {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.pos {
+  background-color: blanchedalmond;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

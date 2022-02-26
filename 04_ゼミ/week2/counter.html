@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="display-count">0</div>
+    <button id="button-count-up">+1</button>
+    <button id="button-count-down">-1</button>
+    <button id="button-dengen">電源ON</button>
+
+    <div id="display-rireki"></div>
+    <script>
+      // HTML の要素を取得する
+      const displayCount = document.getElementById("display-count")
+      const displayRireki = document.getElementById("display-rireki")
+      const buttonCountUp = document.getElementById("button-count-up")
+      const buttonCountDown = document.getElementById("button-count-down")
+      const buttonDengen = document.getElementById("button-dengen")
+
+      // 状態 変数で全て表す
+      let dengen = false
+
+      // 電源を押す場合の関数
+      buttonDengen.onclick = function() {
+        // dengen の trne/false を切り替える
+        dengen = !dengen
+        // 三項演算子
+        buttonDengen.textContent = dengen ? "電源OFF" : "電源ON"
+      }
+
+      // 実際のコードを書いていく
+      buttonCountUp.onclick = function() {
+        if (dengen) {
+          // 変数を表示させる
+          displayCount.textContent = displayCount.textContent + 1
+        }
+      }
+
+      buttonCountDown.onclick = function() {
+        if (dengen) {
+          // 状態を変化させる = 変数を変える
+        }
+      }
+    </script>
+  </body>
+</html>
