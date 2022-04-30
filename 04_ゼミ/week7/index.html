@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetch JSON</title>
+  </head>
+  <body>
+    <h2>ワンちゃんの登場です！</h2>
+    <div>
+      <img src="" alt="おねんね中" id="dog-image" />
+    </div>
+
+    <script>
+      const imageElement = document.getElementById("dog-image")
+
+      // 指定したサーバーにデータを取りに行く
+      const res = fetch("https://dog.ceo/api/breeds/image/random")
+      imageElement.src = res.json()
+    </script>
+  </body>
+</html>

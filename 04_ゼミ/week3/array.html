@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>配列</title>
+  </head>
+  <body>
+    <h1>配列って何？</h1>
+    <script>
+      // 配列
+      const array = []
+      console.log(array)
+
+      // 添字番号で引っ張ってこれる
+      const aisatsu = ["こんにちは", "こんばんは", "おはよう", "おやすみ"]
+      console.log(aisatsu[0])
+      console.log(aisatsu[1])
+      console.log(aisatsu[2])
+      console.log(aisatsu[3])
+      console.log(aisatsu[4])
+
+      // 普通は、for 文と合わせて使ってそれぞれの要素を表示する
+      for (let i = 0; i < aisatsu.length; i++) {
+        console.log(aisatsu[i])
+      }
+
+      // 配列の要素を JS で操作するには、プロトタイプメソッドを使う！
+      // プロトタイプメソッドとは? -> 配列やオブジェクトや文字列が予めもってる関数
+      // Array.prototype.includes を使う
+
+      const isKonnichiha = aisatsu.includes("さよなら")
+      console.log(isKonnichiha)
+
+      // Array.prototype.push を使う
+      aisatsu.push("さようなら")
+      console.log(aisatsu)
+
+      // もっと実用的には、オブジェクトと組み合わせる
+      const memos = [
+        {
+          text: "かぼちゃ",
+          date: new Date("2022-10-4"),
+        },
+        {
+          text: "にんじん",
+          date: new Date("2022-10-5"),
+        },
+      ]
+      console.log(memos)
+    </script>
+  </body>
+</html>
