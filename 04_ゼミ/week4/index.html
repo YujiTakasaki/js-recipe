@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue を勉強する前に</title>
+  </head>
+  <body>
+    <h1>Vanilla JS で作るカウンター</h1>
+    <div id="count">0</div>
+    <button id="count-up">+1</button>
+    <script>
+      const countEl = document.getElementById("count")
+      const countUpButton = document.getElementById("count-up")
+      let count = 0
+      countUpButton.onclick = function() {
+        // 状態を変える
+        count++
+        // 変えた状態を DOM に反映させる
+        countEl.textContent = count
+      }
+    </script>
+
+    <h1>Vueで作るカウンター</h1>
+    <div id="app">
+      <!-- マスタッシュ構文 -->
+      <div>{{ count }}</div>
+      <button v-on:click="countUp" @mouseover="countUp">+1</button>
+    </div>
+    <script src="https://unpkg.com/vue@3.2.20"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            // 変数を書く
+            count: 0,
+          }
+        },
+        methods: {
+          // 関数を書く
+          countUp: function() {
+            // 状態を変える
+            this.count++
+            // 変えた状態を DOM に反映させる行程がいらない！
+          },
+        },
+      }).mount("#app")
+    </script>
+  </body>
+</html>
