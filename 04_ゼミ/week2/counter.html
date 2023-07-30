@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>カウンター(電源付き)</h1>
+    <div id="display">0</div>
+    <button id="count-up-btn">+1</button>
+    <button id="power-btn">電源ONにする</button>
+
+    <script>
+      // ① JavaScript で要素を取得する
+      const display = document.getElementById("display")
+      const countUpBtn = document.getElementById("count-up-btn")
+      const powerBtn = document.getElementById("power-btn")
+
+      // ②必要な状態 (変数) を宣言
+      let isPowerOn = false
+      let count = 0
+
+      // ③countUpBtn を押した時の処理
+      countUpBtn.onclick = function() {
+        // ⑤ isPowerOn が true ならば、以下の処理を行う
+        if (isPowerOn) {
+          //  1 足す
+          count++
+          display.textContent = count
+        }
+      }
+
+      // ④powerBtn を押した時の処理
+      powerBtn.onclick = function() {
+        isPowerOn = !isPowerOn
+        // 三項演算子
+        powerBtn.textContent = isPowerOn ? "電源 OFF にする" : "電源 ON にする"
+      }
+    </script>
+  </body>
+</html>

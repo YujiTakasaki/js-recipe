@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input v-model="inputMoney" type="text" />
+    <input v-model="inputMoney" type="number" />
     <button v-on:click="deposit">入金</button>
     <button v-on:click="withdrawal">出金</button>
   </div>
@@ -33,11 +33,11 @@ export default {
   },
   methods: {
     deposit: function () {
-      this.totalMoney += Number(this.inputMoney)
+      this.totalMoney += this.inputMoney
       this.addRecord("入金")
     },
     withdrawal: function () {
-      this.totalMoney -= Number(this.inputMoney)
+      this.totalMoney -= this.inputMoney
       this.addRecord("出金")
     },
     addRecord: function (operation) {

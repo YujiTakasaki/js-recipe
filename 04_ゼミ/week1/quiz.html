@@ -7,21 +7,24 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>クイズ！</h1>
-    <div>こうへいの弟の名前はなんでしょう</div>
-    <button id="button1">りょう</button>
-    <button id="button2">ひろし</button>
-    <div id="answer"></div>
-    <script>
-      const button1 = document.getElementById("button1")
-      const button2 = document.getElementById("button2")
-      const answer = document.getElementById("answer")
+    <h1>クイズ: さなりゅーの大学はどこ？</h1>
+    <button id="wrong">東大</button>
+    <button id="correct">東工大</button>
+    <div id="feedback">正解は...？</div>
 
-      button1.onclick = function() {
-        answer.textContent = "正解！"
+    <script>
+      // どの要素をいじるかを決める
+      const wrongButton = document.getElementById("wrong")
+      const correctButton = document.getElementById("correct")
+      const feedback = document.getElementById("feedback")
+
+      // どういじるかを決める
+      wrongButton.onclick = function() {
+        feedback.textContent = "不正解！"
       }
-      button2.onclick = function() {
-        answer.textContent = "不正解！"
+
+      correctButton.onclick = function() {
+        feedback.textContent = "正解！"
       }
     </script>
   </body>
