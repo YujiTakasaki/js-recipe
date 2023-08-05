@@ -4,27 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>メモアプリ</title>
   </head>
   <body>
+    <h2>メモアプリ</h2>
     <input type="text" id="memo-input" />
-    <button id="add-button">メモに追加</button>
+    <button id="add-button">保存</button>
     <div id="memo-container"></div>
     <script>
       const memoInput = document.getElementById("memo-input")
       const addButton = document.getElementById("add-button")
       const memoContainer = document.getElementById("memo-container")
 
-      // addButton が押されたら
       addButton.onclick = function() {
-        // memoInput の内容を取ってきて
-        const text = memoInput.value
-        // div を新しくつくる
-        const card = document.createElement("div")
-        // div の textContent に memoInput の内容を入れて
-        card.textContent = text
-        // memo-container に追加する
-        memoContainer.append(card)
+        const div = createElement("div", memoInput.value, memoContainer)
+        const deleteButton = createElement("button", "削除", div)
+
+        deleteButton.onclick = function() {
+          div.remove()
+        }
+      }
+
+      const createElement = function(element, textContent, containerElement) {
+        const div = document.createElement(element)
+        div.textContent = textContent
+        containerElement.append(div)
+        return div
       }
     </script>
   </body>

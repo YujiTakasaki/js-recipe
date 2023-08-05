@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>どうしてVue.jsを使うのか?</title>
+  </head>
+  <body>
+    <h1>Vanilla JSで作るカウンター</h1>
+    <div id="count">0</div>
+    <button id="count-up">＋１</button>
+
+    <script>
+      const countEl = document.getElementById("count")
+      const countUpButton = document.getElementById("count-up")
+      let count = 0
+
+      countUpButton.onclick = function() {
+        count += 1
+        countEl.textContent = count
+      }
+    </script>
+  </body>
+</html>
