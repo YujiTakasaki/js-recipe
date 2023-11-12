@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="count">0</h1>
+    <button id="count-up-button" disabled>+1</button>
+    <button id="power-button">電源を ON にする</button>
+
+    <script>
+      // ① HTML の取得
+      const count = document.getElementById("count")
+      const countUpButton = document.getElementById("count-up-button")
+      const powerButton = document.getElementById("power-button")
+
+      // ② 状態は、定義して、使いまわせるようにする
+      let number = 0
+      let isPowerOn = false
+
+      // ③ 実際にボタンを押した時の処理を書いていく
+      countUpButton.onclick = function() {
+        if (isPowerOn === false) {
+          return
+        }
+        number += 1
+        count.textContent = number
+      }
+
+      powerButton.onclick = function() {
+        // もし isPowerOn が true なら OFF にする
+        if (isPowerOn === true) {
+          isPowerOn = false
+          powerButton.textContent = "電源を ON にする"
+          countUpButton.disabled = true
+        } else {
+          // isPowerOn が false なら true
+          isPowerOn = true
+          powerButton.textContent = "電源を OFF にする"
+          countUpButton.disabled = false
+        }
+      }
+    </script>
+  </body>
+</html>
